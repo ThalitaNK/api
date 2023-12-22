@@ -10,10 +10,10 @@ app.MapGet("/AddHeader",(HttpResponse response) => {
      return new {Name = "Thalita Meira", Age = 30};
  });
 
-// app.MapPost("/saveproduct", (Product product) => {
-//     return product.Code + " - " + product.Name;
+ app.MapPost("/saveproduct", (Product product) => {
+     return product.Code + " - " + product.Name;
 
-// });
+ });
 
 // app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string dateEnd) => {
 //     return dateStart + " - " + dateEnd;
@@ -25,7 +25,7 @@ app.MapGet("/AddHeader",(HttpResponse response) => {
 
 app.Run();
  
-// public class Product {
-//     public string Code { get; set;}
-//     public string Name { get; set;}
-// }
+public class Product {
+     public string Code { get; set;}
+     public string Name { get; set;}
+ }
