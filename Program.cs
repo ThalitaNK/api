@@ -5,10 +5,10 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World! Apocalipse is near");
 app.MapGet("/user", () => new {Name = "Thalita Meira", Age = 30 });
-// app.MapGet("/AddHeader",(HttpResponse response) => {
-//     response.Headers.Add("Teste", "Thalita Meira");
-//     return new {Name = "Thalita Meira", Age = 30};
-// });
+app.MapGet("/AddHeader",(HttpResponse response) => {
+     response.Headers.Add("Teste", "Thalita Meira");
+     return new {Name = "Thalita Meira", Age = 30};
+ });
 
 // app.MapPost("/saveproduct", (Product product) => {
 //     return product.Code + " - " + product.Name;
