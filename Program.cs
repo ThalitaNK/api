@@ -23,8 +23,13 @@ app.MapGet("/AddHeader",(HttpResponse response) => {
      return code;
  });
 
+ app.MapGet("/getproduct", (HttpRequest request)=> {
+    return request.Headers["product-code"].ToString();
+ });
+
 app.Run();
  
+
  public class Product {
      public string Code { get; set;}
      public string Name { get; set;}
