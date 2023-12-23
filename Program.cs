@@ -15,17 +15,21 @@ app.MapGet("/AddHeader",(HttpResponse response) => {
 
  });
 
-// app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string dateEnd) => {
-//     return dateStart + " - " + dateEnd;
-// });
+ app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string dateEnd) => {
+     return dateStart + " - " + dateEnd;
+ });
 
-// app.MapGet("/getproduct/{code}", (string code) => {
-//     return code;
-// });
+ app.MapGet("/getproduct/{code}", ([FromRoute] string code) => {
+     return code;
+ });
+
+ app.MapGet("/getproductbyheader", (HttpRequest request)=> {
+    return request.Headers["product-code"].ToString();
+ });
 
 app.Run();
  
-public class Product {
+ public class Product {
      public string Code { get; set;}
      public string Name { get; set;}
  }
