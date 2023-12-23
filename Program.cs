@@ -29,8 +29,7 @@ app.MapGet("/AddHeader",(HttpResponse response) => {
 
 app.Run();
  
-
- public class Product {
-     public string Code { get; set;}
-     public string Name { get; set;}
- }
+// public class Product {
+//     public string Code { get; set;}
+//     public string Name { get; set;}
+// }
