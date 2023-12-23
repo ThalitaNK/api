@@ -23,7 +23,7 @@ app.MapGet("/AddHeader",(HttpResponse response) => {
      return code;
  });
 
- app.MapGet("/getproduct", (HttpRequest request)=> {
+ app.MapGet("/getproductbyheader", (HttpRequest request)=> {
     return request.Headers["product-code"].ToString();
  });
 
