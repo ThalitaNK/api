@@ -1,34 +1,53 @@
 using Microsoft.AspNetCore.Mvc;
 
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+        var app = builder.Build();
 
-app.MapGet("/", () => "Hello World! Apocalipse is near");
-app.MapGet("/user", () => new {Name = "Thalita Meira", Age = 30 });
-app.MapGet("/AddHeader",(HttpResponse response) => {
-     response.Headers.Add("Teste", "Thalita Meira");
-     return new {Name = "Thalita Meira", Age = 30};
- });
+        app.MapGet("/", () => "Hello World! Apocalipse is near");
+        app.MapGet("/user", () => new { Name = "Thalita Meira", Age = 30 });
+        app.MapGet("/AddHeader", (HttpResponse response) =>
+        {
+            response.Headers.Add("Teste", "Thalita Meira");
+            return new { Name = "Thalita Meira", Age = 30 };
+        });
 
- app.MapPost("/saveproduct", (Product product) => {
-     ProductRepository.Add(product);
+        app.MapPost("/saveproduct", (Product product) =>
+        {
+            ProductRepository.Add(product);
 
- });
+        });
 
- app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string dateEnd) => {
-     return dateStart + " - " + dateEnd;
- });
+        app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string dateEnd) =>
+        {
+            return dateStart + " - " + dateEnd;
+        });
 
- app.MapGet("/getproduct/{code}", ([FromRoute] string code) => {
-     var product = ProductRepository.GetBy(code);
-     return product;
- });
+        app.MapGet("/getproduct/{code}", ([FromRoute] string code) =>
+        {
+            var product = ProductRepository.GetBy(code);
+            return product;
+        });
 
- app.MapGet("/getproductbyheader", (HttpRequest request)=> {
-    return request.Headers["product-code"].ToString();
- });
+        app.MapGet("/getproductbyheader", (HttpRequest request) =>
+        {
+            return request.Headers["product-code"].ToString();
+        });
+        
+        ///para editar o produto
+        app.MapPut("/editproduct", (Product product) =>
+        {
+            var productSaved = ProductRepository.GetBy(product.Code);
+            productSaved.Name = product.Name;
+            return productSaved;
+        });
 
-app.Run();
+        app.Run();
+    }
+}
 
 /// <summary>
 /// o static faz com que essa classe continue funcionando na memória mesmo que a gente faça requisição após requisição. 
