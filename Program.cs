@@ -10,13 +10,16 @@ internal class Program
         app.MapPost("/products", (Product product) =>
         {
             ProductRepository.Add(product);
+            return Results.Created($"/products/ {product.Code}", product.Code);
 
         });
 
         app.MapGet("/products/{code}", ([FromRoute] string code) =>
         {
             var product = ProductRepository.GetBy(code);
-            return product;
+            if(product != null)
+                return Results.Ok(product);
+            return Results.NotFound();
         });
 
         ///para editar o produto
@@ -24,7 +27,7 @@ internal class Program
         {
             var productSaved = ProductRepository.GetBy(product.Code);
             productSaved.Name = product.Name;
-            return productSaved;
+            return Results.Ok();
         });
 
         app.MapDelete("/products/{code}", ([FromRoute] string code) =>
