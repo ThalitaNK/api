@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Vy0cIZ+eQiN5w1zmzicxUK2+K9/WB14U6Il4l2Dx50Tqraf1zwDuWAz5ZjSNsWG/NSzxPiSqN0Q+V+zt2hc9CA==",
+  "dgSpecHash": "PSvniPOjz/aCxYV93PR518DGjs8DdDyY4GKnHSDJShby5/psN7blKf4myKcSK6AiZghQGDUAAEdKES+oPGeUAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Baggins\\api\\api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Baggins\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Baggins\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Baggins\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Baggins\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }
