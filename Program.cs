@@ -7,45 +7,30 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
         var app = builder.Build();
 
-        app.MapGet("/", () => "Hello World! Apocalipse is near");
-        app.MapGet("/user", () => new { Name = "Thalita Meira", Age = 30 });
-        app.MapGet("/AddHeader", (HttpResponse response) =>
-        {
-            response.Headers.Add("Teste", "Thalita Meira");
-            return new { Name = "Thalita Meira", Age = 30 };
-        });
-
-        app.MapPost("/saveproduct", (Product product) =>
+        app.MapPost("/products", (Product product) =>
         {
             ProductRepository.Add(product);
+            return Results.Created($"/products/ {product.Code}", product.Code);
 
         });
 
-        app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string dateEnd) =>
-        {
-            return dateStart + " - " + dateEnd;
-        });
-
-        app.MapGet("/getproduct/{code}", ([FromRoute] string code) =>
+        app.MapGet("/products/{code}", ([FromRoute] string code) =>
         {
             var product = ProductRepository.GetBy(code);
-            return product;
-        });
-
-        app.MapGet("/getproductbyheader", (HttpRequest request) =>
-        {
-            return request.Headers["product-code"].ToString();
+            if(product != null)
+                return Results.Ok(product);
+            return Results.NotFound();
         });
 
         ///para editar o produto
-        app.MapPut("/editproduct", (Product product) =>
+        app.MapPut("/products", (Product product) =>
         {
             var productSaved = ProductRepository.GetBy(product.Code);
             productSaved.Name = product.Name;
-            return productSaved;
+            return Results.Ok();
         });
 
-        app.MapDelete("/deleteproduct/{code}", ([FromRoute] string code) =>
+        app.MapDelete("/products/{code}", ([FromRoute] string code) =>
         {
             var productSaved = ProductRepository.GetBy(code);
             ProductRepository.Remove(productSaved);
@@ -95,8 +80,6 @@ public static class ProductRepository
     }
 
 }
-
-
 
 public class Product
 {
