@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Baggins\\api\\api.csproj": {}
+    "C:\\Users\\Baggins\\api\\api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Baggins\\api\\api.csproj": {
+    "C:\\Users\\Baggins\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Baggins\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\Baggins\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "c:\\Users\\Baggins\\api\\api.csproj",
+        "projectPath": "C:\\Users\\Baggins\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Baggins\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Baggins\\api\\obj\\",
+        "outputPath": "C:\\Users\\Baggins\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Baggins\\AppData\\Roaming\\NuGet\\NuGet.Config"
