@@ -48,6 +48,11 @@ internal class Program
             }
         });
 
+        app.MapGet("/configuration/database", (IConfiguration configuration) => {
+            return Results.Ok(configuration["database:configuration"]);
+
+        });
+
         app.Run();
     }
 }
