@@ -24,3 +24,4 @@ C:\Users\Baggins\api\obj\Debug\net6.0\staticwebassets\msbuild.build.api.props
 C:\Users\Baggins\api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.api.props
 C:\Users\Baggins\api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.api.props
 C:\Users\Baggins\api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Baggins\api\bin\Debug\net6.0\appsettings.Staging.json

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6WsE0l7N0MREUrdD1aPrqCZBx8+8Ntm6SoKSR1Vq28Uu8Z6FPZIOEH7vqLr1wtXBsWVGO2Xgp6TRG00UizpyoQ==",
+  "dgSpecHash": "PSvniPOjz/aCxYV93PR518DGjs8DdDyY4GKnHSDJShby5/psN7blKf4myKcSK6AiZghQGDUAAEdKES+oPGeUAg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Baggins\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\Baggins\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Baggins\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
     "C:\\Users\\Baggins\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
